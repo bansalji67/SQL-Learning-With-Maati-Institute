@@ -1,0 +1,33 @@
+CustomerID,Customer,Gender,Area,profession,TotalSales
+C0001,SRIKANTA SAMAL           ,M,middle,Retired,475
+C0002,BHAGAT SINGH DHANKA      ,M,east,unemployment,357
+C0003,VIJAY KUMAR              ,M,east,profession,430
+C0004,GIRIRAJ DUTTA            ,M,west,self-employed,180
+C0005,PANKAJ KUMAR THAKUR      ,M,middle,Retired,680
+C0006,AJAY KUMAR DWIVEDI       ,M,middle,unemployment,171
+C0007,FAIYAZ AHMED             ,M,east,profession,216
+C0008,SARITA TRIPATHI,F,west,self-employed,850
+C0009,ABHISHEK KR. RAI         ,M,south,Retired,27
+C0010,VIRENDER SINGH RAWAT     ,M,middle,unemployment,455
+C0011,SAPNA ARORA,F,south,profession,368
+C0012,DHADWAL DEEPAK KUMAR     ,M,middle,self-employed,172
+C0013,CHITRA VIRMANI,F,east,Retired,728
+C0014,ARVIND KUMAR             ,M,east,unemployment,244
+C0015,SACHIN GOSWAMI           ,M,west,profession,130
+C0016,PRAVIN KUMAR             ,M,middle,self-employed,88
+C0017,DIKSHA POKHRIYAL,F,middle,Retired,536
+C0018,RISHIKESH TIWARI         ,M,east,unemployment,63
+C0019,CHANDAN KUMAR PANDEY     ,M,west,profession,11
+C0020,PUNIT MATHUR,M,south,self-employed,171
+C0021,ABHA TANDON,F,middle,Retired,500
+C0022,SURESH RANA,M,south,unemployment,63
+C0023,MUDASSIR ALAM            ,M,middle,profession,88
+C0024,SALONI AGRAWAL,F,east,self-employed,142
+C0025,MANOJ KUMAR PANDEY       ,M,east,Retired,640
+C0026,DURGA NAND JHA           ,M,west,unemployment,450
+C0027,NEHA RAJPUT,F,middle,profession,152
+C0028,LAKSHMAN KUMAR           ,M,middle,self-employed,940
+C0029,AMRESH KR JHA            ,M,east,Retired,80
+C0030,SHAHNAWAJ SIDDIQUI       ,M,west,unemployment,486
+C0031,SAPNA MATHUR,F,south,profession,34
+C0032,VARUN MALIK,M,middle,self-employed,658
