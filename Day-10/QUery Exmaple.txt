@@ -1,0 +1,62 @@
+-- Create Departments table
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50)
+);
+
+-- Insert data into Departments
+INSERT INTO Departments (DepartmentID, DepartmentName) VALUES
+(1, 'HR'),
+(2, 'Sales'),
+(3, 'IT'),
+(4, 'Marketing'),
+(5, 'Finance');
+
+-- Create Employees table
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    EmployeeName VARCHAR(50),
+    DepartmentID INT,
+    Salary DECIMAL(10, 2),
+    HireDate DATE,
+    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+);
+
+-- Insert data into Employees
+INSERT INTO Employees (EmployeeID, EmployeeName, DepartmentID, Salary, HireDate) VALUES
+(101, 'Alice', 1, 65000.00, '2021-03-15'), -- HR, >60k, >2020 (Qualifies HR)
+(102, 'Bob', 1, 70000.00, '2020-07-01'), -- HR, >60k, >2020 (Qualifies HR)
+(103, 'Charlie', 2, 58000.00, '2021-01-20'), -- Sales, <60k (Disqualifies Sales)
+(104, 'David', 2, 75000.00, '2020-02-10'), -- Sales, >60k, >2020
+(105, 'Eve', 2, 80000.00, '2019-11-01'), -- Sales, >60k, <2020 (Disqualifies Sales)
+(106, 'Frank', 3, 90000.00, '2021-05-01'), -- IT, >60k, >2020 (Qualifies IT)
+(107, 'Grace', 3, 85000.00, '2020-09-10'), -- IT, >60k, >2020 (Qualifies IT)
+(108, 'Heidi', 4, 62000.00, '2022-01-01'), -- Marketing, >60k, >2020 (Qualifies Marketing)
+(109, 'Ivan', 4, 61000.00, '2021-07-01'), -- Marketing, >60k, >2020 (Qualifies Marketing)
+(110, 'Judy', 5, 59000.00, '2020-03-01'); -- Finance, <60k (Disqualifies Finance)
+
+-- Let's add one more employee to HR who doesn't meet the criteria to show it works
+INSERT INTO Employees (EmployeeID, EmployeeName, DepartmentID, Salary, HireDate) VALUES
+(111, 'Kevin', 1, 55000.00, '2021-04-20'); -- HR, <60k (Disqualifies HR)
+
+
+
+
+SELECT
+    d.DepartmentName
+FROM
+    Departments d
+WHERE
+    NOT EXISTS (
+        SELECT 1
+        FROM Employees e
+        WHERE e.DepartmentID = d.DepartmentID -- Correlated part: checks employees for the current department
+          AND (e.Salary <= 60000.00          -- Employee earns <= 60k
+               OR e.HireDate <= '2019-12-31') -- OR was hired on or before 2019-12-31 (i.e., not after Jan 1, 2020)
+    );
+
+
+
+
+
+
