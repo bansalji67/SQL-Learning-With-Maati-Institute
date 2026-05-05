@@ -1,0 +1,7 @@
+
+use [Ansari_Bhai_ With_SQL]
+
+select * from Orders
+
+
+-----------Q: Write a query to calculate the rolling average sales for each day over the past 7 days. Select [Order Date],Sales,avg(Sales) over (order by [Order Date] Rows between 6 preceding and current row) as Rolling_Avg_7_Days from Orders -------------Find Orders Placed Within a Specific Timeframe 04-01-2016 to 15-01-2016  Select [Order ID],[Order Date] from Orders where cast([Order Date] as date) between '2016-01-04' AND '2016-01-15'  ---------------------Calculate Cumulative Sum of Sales by Month  Select Month([Order Date]) as Month ,Sales,SUM(Sales) over(order by month([Order Date])) as cumulative_Sales from Orders  ---------------------Identify Employees in Multiple Regions  select [Customer Name],[Customer ID] FROM Orders  GROUP BY [Customer Name],[Customer ID]  Having COUNT(distinct [Customer ID])=1  ------------------ Identify the Most Popular Product in Each Category  Select Category,[Product Name], max(Sales) as max_Sales from Orders  Group by Category,[Product Name]  Order by max_Sales desc  ----------------------Find Customers Who Have Never Ordered a Specific Product  Select [Customer ID] FROM Orders  where [Customer ID] Not in  (Select [Customer ID] from Orders where [Product ID]= 'FUR-BO-10003966'
